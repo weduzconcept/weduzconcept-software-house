@@ -43,3 +43,15 @@
 .emblem{width:clamp(185px,27vw,272px);height:clamp(185px,27vw,272px);padding:8px;overflow:visible}
 .emblem img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:0}
 .topbar .brand img,.closing img,.splash img{object-fit:contain;object-position:center}
+
+
+/* Seven visual concept previews. Existing portfolio layout and sample modals remain intact. */
+.project-art.project-visual{position:relative;overflow:hidden;background:#071b2b;border:1px solid #28425c;border-radius:12px;display:block;aspect-ratio:1.6;min-height:0;padding:0}
+.project-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s ease}
+.project-card:hover .project-visual img{transform:scale(1.045)}
+.project-visual .visual-label{position:absolute;right:8px;bottom:8px;font-size:8px;font-weight:800;letter-spacing:.11em;color:#ffdf9d;background:#051424e8;border:1px solid #97754a;padding:5px 7px;border-radius:5px;pointer-events:none}
+.sample-mockup{margin:0 0 19px;overflow:hidden;border-radius:12px;border:1px solid #98734a;background:#0c1b2b}
+.sample-mockup img{display:block;width:100%;height:auto;aspect-ratio:1200/760;object-fit:contain}
+.sample-mockup figcaption{padding:9px 12px;text-align:center;font-size:10px;color:#f0d4a1;background:#10263d;letter-spacing:.02em}
+@media (max-width:670px){.sample-mockup{margin-bottom:12px}.sample-mockup figcaption{font-size:9px}.project-visual .visual-label{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.project-visual img{transition:none}}
