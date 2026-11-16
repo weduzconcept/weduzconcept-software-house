@@ -1,0 +1,33 @@
+name: Build transparent WEDUZCONCEPT hero logo
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_transparent_hero.py'
+      - '.github/workflows/build-hero-logo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install Pillow
+        run: python3 -m pip install --break-system-packages Pillow
+      - name: Convert the existing approved GIF, retaining original timing
+        run: python3 scripts/build_transparent_hero.py
+      - name: Commit transparent asset to same repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/weduzconcept-hero-transparent.webp
+          if git diff --cached --quiet; then
+            echo "Transparent asset already current"
+          else
+            git commit -m "assets(hero): transparent original 4.8s sway animation"
+            git push
+          fi
