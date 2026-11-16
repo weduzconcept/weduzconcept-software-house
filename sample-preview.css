@@ -61,7 +61,7 @@
    balanced 4.8 s CSS sway; all other page sections remain unchanged. */
 .emblem.emblem-ayun{position:relative;width:clamp(190px,29vw,280px);height:auto;aspect-ratio:309/241;margin:18px auto 14px;padding:0;overflow:hidden;animation:none;filter:drop-shadow(0 8px 20px #d7a75035)}
 .emblem.emblem-ayun img{display:block;width:100%;height:auto;object-fit:contain;object-position:top center;border-radius:0}
-.emblem.emblem-ayun:has(img:not(.hero-fallback)){/* Limit 309×414 GIF to the 0–241px badge area: hide duplicated artwork text and platform. */-webkit-mask-image:radial-gradient(circle at 50% 53%,#000 0%,#000 38%,transparent 41%);mask-image:radial-gradient(circle at 50% 53%,#000 0%,#000 38%,transparent 41%)}
+.emblem.emblem-ayun:has(img:not(.hero-fallback)){/* Limit 309×414 GIF to the 0–241px badge area: hide duplicated artwork text and platform. */-webkit-mask-image:radial-gradient(circle closest-side at 50% 53%,#000 0%,#000 91%,transparent 100%);mask-image:radial-gradient(circle closest-side at 50% 53%,#000 0%,#000 91%,transparent 100%)}
 .emblem.emblem-ayun img:not(.hero-fallback){-webkit-mask-image:none;mask-image:none}
 .emblem.emblem-ayun img.hero-fallback{height:100%;object-fit:contain;transform-origin:50% 50%;animation:wc-symmetric-sway 4.8s ease-in-out infinite}
 @keyframes wc-symmetric-sway{0%,50%,100%{transform:perspective(900px) rotateY(0deg)}25%{transform:perspective(900px) rotateY(11deg)}75%{transform:perspective(900px) rotateY(-11deg)}}
