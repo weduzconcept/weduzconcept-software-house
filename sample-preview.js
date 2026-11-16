@@ -7,12 +7,14 @@ const cases={
  'hadir-pro':{name:'WEDUZ HADIR PRO',type:'Absensi Digital',tone:'#ecc27d',hint:'Ilustrasi data demo — bukan data peserta sebenarnya',metrics:[['Peserta Aktif','48'],['Hadir Hari Ini','39'],['Izin / Sakit','5'],['Belum Tercatat','4']],tabs:['Rekap','Jadwal','QR Absensi'],rows:[['Peserta Contoh A','Kelas A','Hadir · 07:02'],['Peserta Contoh B','Kelas B','Izin'],['Peserta Contoh C','Kelas A','Terlambat 6m']]},
  'ayatara':{name:'AYATARA',type:'Belajar Mengaji Anak',tone:'#8ae3c4',hint:'Ilustrasi halaman belajar — tanpa suara atau data anak',metrics:[['Huruf Hijaiyah','29'],['Mode Belajar','3'],['Kuis','Interaktif'],['Doa','Harian']],tabs:['Hijaiyah','Kuis','Doa'],rows:[['اَ','A','Fathah'],['بَ','Ba','Fathah'],['جَ','Ja','Fathah']]},
  'aneka-jamu':{name:'ANEKA JAMU',type:'Inventory Control',tone:'#93dba5',hint:'Contoh stok inventori — bukan data usaha',metrics:[['Produk Aktif','640'],['Rak Terisi','18'],['Barang Masuk','32'],['Stok Rendah','12']],tabs:['Dashboard','Stok per Rak','Barang Masuk'],rows:[['Jamu Serbuk Contoh A','Rak A-01','45 pak'],['Herbal Contoh B','Rak B-02','16 botol'],['Minuman Contoh C','Rak A-03','80 pcs']]},
- 'smart-rt':{name:'SMART RT DIRECTORY',type:'Direktori Lingkungan',tone:'#94c8f9',hint:'Seluruh alamat ilustrasi fiktif — tidak ada data warga',metrics:[['Rumah Contoh','36'],['Lokasi Terpetakan','30'],['Dokumentasi','25'],['Akses','Terbatas']],tabs:['Ringkasan','Direktori','Lokasi'],rows:[['Rumah Contoh 01','Blok Ilustrasi A','Terdokumentasi'],['Rumah Contoh 02','Blok Ilustrasi B','Menunggu foto'],['Rumah Contoh 03','Blok Ilustrasi C','Terpetakan']]}
+ 'smart-rt':{name:'SMART RT DIRECTORY',type:'Direktori Lingkungan',tone:'#94c8f9',hint:'Seluruh alamat ilustrasi fiktif — tidak ada data warga',metrics:[['Rumah Contoh','36'],['Lokasi Terpetakan','30'],['Dokumentasi','25'],['Akses','Terbatas']],tabs:['Ringkasan','Direktori','Lokasi'],rows:[['Rumah Contoh 01','Blok Ilustrasi A','Terdokumentasi'],['Rumah Contoh 02','Blok Ilustrasi B','Menunggu foto'],['Rumah Contoh 03','Blok Ilustrasi C','Terpetakan']]},
+ 'wizzy':{name:'WEDUZ KIDS — WIZZY',type:'English for Kids',tone:'#c6a5ff',hint:'Ilustrasi belajar bahasa Inggris anak — tanpa akun atau data anak',metrics:[['Tema Belajar','Colors'],['Kosakata','Basic Words'],['Kuis','Fun Quiz'],['Mode','Practice']],tabs:['Learn','Colors','Words','Quiz'],rows:[['Red','Merah','Color'],['Blue','Biru','Color'],['Apple','Apel','Vocabulary']]}
 };
 const el=id=>document.getElementById(id);
 const backdrop=el('sample-modal');
 const title=el('sample-title'),type=el('sample-type'),desc=el('sample-desc'),screen=el('sample-screen');
 const closeBtn=el('sample-close');
+const mockImage=el('sample-mockup-image');
 let previousFocus=null;
 function make(tag,cls,content){
  const node=document.createElement(tag);if(cls)node.className=cls;if(content!=null)node.textContent=String(content);return node;
@@ -20,6 +22,8 @@ function make(tag,cls,content){
 function renderSample(key){
  const d=cases[key];if(!d)return;
  screen.replaceChildren();
+ mockImage.src='./assets/mockups/'+key+'.svg';
+ mockImage.alt='Visual ilustrasi konsep aplikasi '+d.name;
  const appShell=make('div','sample-app');
  appShell.style.setProperty('--sample-accent',d.tone);
  const bar=make('div','sample-app-bar');
