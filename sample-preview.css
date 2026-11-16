@@ -56,10 +56,6 @@
 @media (max-width:670px){.sample-mockup{margin-bottom:12px}.sample-mockup figcaption{font-size:9px}.project-visual .visual-label{font-size:7px}}
 @media(prefers-reduced-motion:reduce){.project-visual img{transition:none}}
 
-/* Hero: transparent original 48-frame / 4.8s animation. No CSS masks
-   or opaque GIF backdrop. Existing header/portfolio remain unchanged. */
-.emblem.emblem-ayun{position:relative;width:clamp(190px,27vw,255px);height:auto;aspect-ratio:1;margin:18px auto 18px;padding:0;overflow:visible;animation:none;filter:drop-shadow(0 6px 17px #e0ae4e39)}
-.emblem.emblem-ayun img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:0;-webkit-mask-image:none;mask-image:none}
-.emblem.emblem-ayun img.hero-fallback{transform-origin:center;animation:wc-symmetric-sway 4.8s ease-in-out infinite}
-@keyframes wc-symmetric-sway{0%,50%,100%{transform:perspective(900px) rotateY(0)}25%{transform:perspective(900px) rotateY(11deg)}75%{transform:perspective(900px) rotateY(-11deg)}}
-@media(prefers-reduced-motion:reduce){.emblem.emblem-ayun img.hero-fallback{animation:none}}
+/* Premium original hero: static, perfectly centered 3D gold emblem. */
+.emblem.emblem-static{width:clamp(190px,27vw,272px);height:clamp(190px,27vw,272px);margin:24px auto 25px;padding:8px;overflow:visible;animation:none;filter:drop-shadow(0 10px 22px #d7a75040)}
+.emblem.emblem-static img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:0;animation:none;-webkit-mask-image:none;mask-image:none}
